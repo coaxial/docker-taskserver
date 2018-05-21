@@ -1,0 +1,10 @@
+---
+jobs:
+  include:
+    - stage: test
+      services:
+        - docker
+      install:
+        - docker build -t taskserver .
+      script:
+        - docker run --rm taskserver | grep 'taskd [0-9\.]\{1,\}'
