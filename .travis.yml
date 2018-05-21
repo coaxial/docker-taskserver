@@ -8,3 +8,6 @@ jobs:
         - docker build -t taskserver .
       script:
         - docker run --rm taskserver | grep 'taskd [0-9\.]\{1,\}'
+
+notifications:
+  webhooks: https://hooks.microbadger.com/images/coaxial/taskserver/iUnDHMOEThwIPt5gQRNbzOel-jc=
